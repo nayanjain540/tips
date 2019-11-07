@@ -15,6 +15,7 @@ class Main extends Component{
 			backgroundColor:"light-blue"
 		}
 		return(
+			<div className="App" style={{backgroundColor:'#add8e6'}}>
 				<div className="body" style={{backgroundColor: '#add8e6'}}>
 					<div>
 						<BrowserRouter>
@@ -29,6 +30,7 @@ class Main extends Component{
           						</Switch>
           				< /BrowserRouter >			
           			</div>
+						</div>
 						</div>
 
 			)

@@ -77,7 +77,7 @@ class PolicyNumber extends Component {
         
 
         return(
-        <div>
+        <div style={{backgroundColor:'#add8e6'}}>
             <div className="container">
             <div className="row row-content">
                 <div className="col-sm-5">
