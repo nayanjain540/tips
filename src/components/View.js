@@ -6,7 +6,7 @@ import '../App.css';
 import ImageUploader from 'react-images-upload';
 import { Media } from 'reactstrap';
 
-import Camera,{ FACING_MODES } from 'react-html5-camera-photo';
+import Camera,{ FACING_MODES,IMAGE_TYPES } from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import Footer from './Footer'
 import SearchField from "react-search-field";
@@ -97,6 +97,7 @@ const RenderCard=this.state.insurance.map((ins)=>
         <Camera
           onTakePhoto = { (dataUri) => { this.onTakePhoto(dataUri); } }
           idealFacingMode = {FACING_MODES.ENVIRONMENT}
+          isImageMirror = {false}
         />
        
       </div>
