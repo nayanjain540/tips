@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
-import Camera from 'react-html5-camera-photo';
+import Camera,{ FACING_MODES } from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import Footer from './Footer';
 import ImageUploader from 'react-images-upload';
+import { Media } from 'reactstrap';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      data:''
+    }
+  }
+
+
+
   onTakePhoto (dataUri) {
     // Do stuff with the dataUri photo...
     console.log('takePhoto');
+    this.setState({
+      data:dataUri,
+
+    });
+    console.log(this.state.data);
   }
   
   render () {
@@ -37,9 +52,14 @@ class App extends Component {
       <div className="App" style={submitButton}>
         <Camera
           onTakePhoto = { (dataUri) => { this.onTakePhoto(dataUri); } }
+          idealFacingMode = {FACING_MODES.ENVIRONMENT}
         />
+        <Media>
+            <Media object src={this.state.data} alt="Generic placeholder image" />
+            </Media>
       </div>
       </div>
+      
       <br/>
       <br/>
       <br/>
